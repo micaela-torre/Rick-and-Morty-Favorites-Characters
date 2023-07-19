@@ -7,7 +7,6 @@ const List = ({ characters = [], title = '', secondList, handlerChangePage }) =>
   const [charactersList, setCharactersList] = useState(characters.slice(0, 6));
 
   const handleCardCountChange = count => setCharactersList(characters?.slice(0, count));
-  
 
   return (
     <section className={styles.characters_list_container}>
@@ -15,7 +14,7 @@ const List = ({ characters = [], title = '', secondList, handlerChangePage }) =>
 
       <div className={styles.characters_list}>
         {charactersList?.map(character => (
-          <CardCharacter key={'character -' + character.name} {...character} character={title} />
+          <CardCharacter key={`character: ${character.id}`} {...character} character={title} />
         ))}
       </div>
       <Paginator handlerChangePage={handlerChangePage} onHandlerChangePagination={handleCardCountChange} character={title} />

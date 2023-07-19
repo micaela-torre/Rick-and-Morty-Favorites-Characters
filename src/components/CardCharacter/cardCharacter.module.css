@@ -1,15 +1,13 @@
 .character_card_container {
   display: flex;
-  width: 80%;
+  width: 100%;
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
-  cursor: pointer;
   height: 300px;
   background-position: center;
   background-size: cover;
-  /* animation: pulse 1s infinite; */
 }
 
 .status_container {
@@ -25,31 +23,15 @@ input.radio_input {
   padding: 5px;
   width: 30px;
   height: 30px;
-  margin-right: 5px;
+  margin: 5px;
 }
 
-.image {
-  overflow: hidden;
+.information_container {
   width: 100%;
-  min-height: 160px;
-  display: table-cell;
-  border-top-left-radius: 5px;
+  font-size: 1.8rem;
+  text-align: center;
+  height: 100px;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   border-bottom-left-radius: 5px;
-}
-.episodes_container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform: scale(1);
-  }
+  border-bottom-right-radius: 5px;
 }

@@ -1,8 +1,15 @@
 .list_container {
   display: flex;
   justify-content: center;
+  justify-content: space-evenly;
 }
-
+.list_characters_title {
+  color: #16abc6;
+  text-align: center;
+  -webkit-text-stroke: 0.5px black;
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+}
 @media (max-width: 600px) {
   .list_container {
     flex-direction: column;

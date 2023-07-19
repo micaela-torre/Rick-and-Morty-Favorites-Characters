@@ -14,50 +14,40 @@ const ContainerList = () => {
     twoCharacter: [],
   });
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const [sectionOne, sectionTwo] = await Promise.all([CharacterServices.getCharacters(1), CharacterServices.getCharacters(2)]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const [sectionOne, sectionTwo] = await Promise.all([CharacterServices.getCharacters(1), CharacterServices.getCharacters(2)]);
 
-  //       const formattedSectionOne = formatCharacterInfo(sectionOne.data.results);
-  //       const formattedSectionTwo = formatCharacterInfo(sectionTwo.data.results);
+        const formattedSectionOne = formatCharacterInfo(sectionOne.data.results);
+        const formattedSectionTwo = formatCharacterInfo(sectionTwo.data.results);
 
-  //       setCharacterSections(prevState => ({
-  //         ...prevState,
-  //         oneCharacter: formattedSectionOne,
-  //         twoCharacter: formattedSectionTwo,
-  //       }));
-  //     } catch (e) {
-  //       console.error(e);
-  //       SnackbarUtilities.error('There was an error loading characters, please try again later');
-  //     } finally {
-  //       setIsDataLoading(false);
-  //     }
-  //   };
+        setCharacterSections(prevState => ({
+          ...prevState,
+          oneCharacter: formattedSectionOne,
+          twoCharacter: formattedSectionTwo,
+        }));
+      } catch (e) {
+        console.error(e);
+        SnackbarUtilities.error('There was an error loading characters, please try again later');
+      } finally {
+        setIsDataLoading(false);
+      }
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
   return (
     <div>
-      <h1
-        style={{
-          color: '#16ABC6',
-          textAlign: 'center',
-          '-webkit-text-stroke': '0.5px black',
-          fontSize: '2.3rem',
-          'letter-spacing': '2px',
-        }}
-      >
-        Select your favorite character from each section and watch the magic
-      </h1>
+      <h1 className={styles.list_characters_title}>Select your favorite character from each section and watch the magic</h1>
       {isDataLoading ? (
         <Spinner />
       ) : (
         <div className={styles.list_container}>
           <ListCharacters title={ONE_CHARACTER} characters={characterSections.oneCharacter} />
 
-          {/* <ListCharacters title={TWO_CHARACTER} secondList characters={characterSections.twoCharacter} /> */}
+          <ListCharacters title={TWO_CHARACTER} secondList characters={characterSections.twoCharacter} />
         </div>
       )}
     </div>
