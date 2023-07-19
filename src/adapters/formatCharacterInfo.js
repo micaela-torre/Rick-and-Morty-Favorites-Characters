@@ -1,6 +1,6 @@
-export const formatCharacterInfo = (response = []) => {
-  return response.data.results.map(item => {
-    const { name = '', status = '', species = '', image = '', id = '' } = item;
+export const formatCharacterInfo = response => {
+  return response?.data?.results?.map(item => {
+    const { name = '', status = '', species = '', image = '', id = '', episode = [] } = item;
 
     return {
       name,
@@ -8,6 +8,7 @@ export const formatCharacterInfo = (response = []) => {
       species,
       image,
       id,
+      episode,
     };
   });
 };

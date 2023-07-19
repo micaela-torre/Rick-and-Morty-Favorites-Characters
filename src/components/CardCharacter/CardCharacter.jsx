@@ -3,29 +3,22 @@ import { STATUS_COLORS } from '../../constants/colors';
 import Badge from '../Badge/Badge';
 import styles from './cardCharacter.module.css';
 import { EpisodeContext } from '../../context/EpisodeContext';
+import { abbreviateName } from '../../helpers/functions';
 
-const CardCharacter = ({ name = '', status = '', species = '', image = '', id, character }) => {
+const CardCharacter = ({ name = '', status = '', species = '', image = '', id, episode, character }) => {
   const { setChosenCharacters } = useContext(EpisodeContext);
 
   const chosenCharacterHandler = e => {
-    const { name, value } = e.target;
-    setChosenCharacters(prevState => ({ ...prevState, [name]: value }));
+    const { name } = e.target;
+    setChosenCharacters(prevState => ({ ...prevState, [name]: { episodes: episode, characterId: id } }));
   };
 
   return (
     <label htmlFor={id}>
-      <input className={styles.radio_input} type="radio" name={character} value={id} id={id} onClick={chosenCharacterHandler} />
+      <input className={styles.radio_input} type="radio" name={character} id={id} onClick={chosenCharacterHandler} />
       <div style={{ backgroundImage: `url(${image})` }} className={styles.character_card_container}>
-        <div
-          style={{
-            width: '100%',
-            fontSize: '1.8rem',
-            textAlign: 'center',
-            height: '100px',
-            'backgroundImage': 'linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1))',
-          }}
-        >
-          <p>{name}</p>
+        <div className={styles.information_container}>
+          <p>{abbreviateName(name)}</p>
           <div className={styles.status_container}>
             <Badge color={STATUS_COLORS[status]} />
             <p>

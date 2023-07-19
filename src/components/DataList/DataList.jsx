@@ -17,8 +17,8 @@ const DataList = ({ customMessage = 'No hay resultados', title = '', initialPage
       <h3 className={secondList ? styles.second_title : styles.characters_list_title}>{title}</h3>
       <span>Hola</span>
       <div className={styles.characters_list}>
-        {list?.map(({ id, ...rest }) => (
-          <CardCharacter key={id} {...rest} character={title} />
+        {list?.map(item => (
+          <CardCharacter key={item.id} {...item} character={title} />
         ))}
       </div>
       <Paginator

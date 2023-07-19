@@ -1,9 +1,9 @@
-import { callApi } from "./utilServices";
+import { callApi } from './utilServices';
 
-export const EpisodeServices = ((callService) => {
-  const getEpisodes = () => {
+export const EpisodeServices = (callService => {
+  const getEpisodes = episodes => {
     return callService({
-      endpoint: `episode`,
+      endpoint: `episode/${episodes}`,
     });
   };
 

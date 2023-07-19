@@ -13,7 +13,7 @@ export const useDataList = ({ adapter, saveExtraInformation, items, filters, tit
       try {
         if (signal.aborted) return null;
         setIsDataLoading(true);
-        if (saveExtraInformation) saveExtraInformation({ [title]: { currentPage: page } });
+        if (saveExtraInformation) saveExtraInformation({ page, title });
         const results = await service({ page, ...filters });
         let items = results;
         if (adapter) items = adapter(results);

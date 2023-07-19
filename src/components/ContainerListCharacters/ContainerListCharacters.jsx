@@ -11,17 +11,7 @@ const ContainerList = () => {
 
   return (
     <div>
-      <h1
-        style={{
-          color: '#16ABC6',
-          textAlign: 'center',
-          '-webkit-text-stroke': '0.5px black',
-          fontSize: '2.3rem',
-          'letter-spacing': '2px',
-        }}
-      >
-        Select your favorite character from each section and watch the magic
-      </h1>
+      <h1 className={styles.list_characters_title}>Select your favorite character from each section and watch the magic</h1>
 
       <div className={styles.list_container}>
         <DataList title={ONE_CHARACTER} adapter={formatCharacterInfo} service={CharacterServices.getCharacters} saveExtraInformation={handleChangeCharacter} />
