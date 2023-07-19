@@ -6,7 +6,7 @@ import Spinner from '../Spinner/Spinner';
 import Message from '../Message/Message';
 import { useDataList } from './hooks/useDataList';
 
-const DataList = ({ customMessage = 'No hay resultados', title = '', initialPage = 1, secondList, showPagination, ...resProps }) => {
+const DataList = ({ customMessage = 'No results', title = '', initialPage = 1, secondList, showPagination, ...resProps }) => {
   const { isDataLoading, list, setPage, page, handleCardCountChange } = useDataList({ ...resProps, title, initialPage });
 
   if (isDataLoading) return <Spinner />;

@@ -8,10 +8,10 @@ export const EpisodeContextProvider = ({ children }) => {
     [ONE_CHARACTER]: { episodes: [], characterId: '', initialPage: null },
     [TWO_CHARACTER]: { episodes: [], characterId: '', initialPage: null },
   });
-  
+
   const handleChangeCharacter = ({ title, page }) => {
-    let cloneChosenCharacters = {...chosenCharacters}
-    cloneChosenCharacters[title].currentPage = page
+    let cloneChosenCharacters = { ...chosenCharacters };
+    cloneChosenCharacters[title].currentPage = page;
     setChosenCharacters(cloneChosenCharacters);
   };
 
