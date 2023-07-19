@@ -7,13 +7,13 @@ export const EpisodeContextProvider = ({ children }) => {
   const [chosenCharacters, setChosenCharacters] = useState({
     [ONE_CHARACTER]: { episodes: [], characterId: '', initialPage: null },
     [TWO_CHARACTER]: { episodes: [], characterId: '', initialPage: null },
-    sharedCharacters: {
-      episodes: [],
-      characterId: [],
-    },
   });
-  const handleChangeCharacter = data => {
-    setChosenCharacters(prevChosenCharacter => ({ ...prevChosenCharacter, ...data }));
+  
+  const handleChangeCharacter = ({ title, page }) => {
+    let cloneChosenCharacters = {...chosenCharacters}
+    cloneChosenCharacters[title].currentPage = page
+    setChosenCharacters(cloneChosenCharacters);
   };
+
   return <EpisodeContext.Provider value={{ chosenCharacters, setChosenCharacters, handleChangeCharacter }}>{children}</EpisodeContext.Provider>;
 };
