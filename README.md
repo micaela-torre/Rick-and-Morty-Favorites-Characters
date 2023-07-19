@@ -10,7 +10,9 @@ La aplicación utiliza las siguientes librerías:
 
 - Axios: Para realizar solicitudes HTTP a la API de Rick and Morty.
 - Notistack: Para mostrar notificaciones de estilo Snackbar en la interfaz de usuario.
-El proyecto está desplegado en Firebase.
+
+## El proyecto está desplegado en Firebase.
+- https://rick-and-morty-c28ac.web.app/
 
 ### Características
 - Muestra dos listas de personajes de Rick and Morty.
