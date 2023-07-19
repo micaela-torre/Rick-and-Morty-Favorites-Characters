@@ -1,0 +1,10 @@
+.list_container {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .list_container {
+    flex-direction: column;
+  }
+}

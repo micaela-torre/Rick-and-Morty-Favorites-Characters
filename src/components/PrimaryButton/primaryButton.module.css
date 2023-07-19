@@ -1,0 +1,19 @@
+.primary_button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: black;
+  outline: 1px solid;
+  padding: 2px 5px;
+  min-width:25px;
+  font-family: "Creepster", cursive;
+  font-size: 1.3rem;
+  border-radius: 25px;
+  transition: transform 0.3s;
+}
+.primary_button:hover {
+  transform: scale(1.1);
+}
+.primary_button:focus {
+  color: #00ff00;
+}
