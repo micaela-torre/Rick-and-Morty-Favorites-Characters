@@ -1,6 +1,5 @@
 .list_container {
   display: flex;
-  justify-content: center;
   justify-content: space-evenly;
 }
 .list_characters_title {
@@ -9,6 +8,9 @@
   -webkit-text-stroke: 0.5px black;
   font-size: 2.3rem;
   letter-spacing: 2px;
+  justify-content: space-around;
+  outline: 1px solid white;
+  width: 100%;
 }
 @media (max-width: 600px) {
   .list_container {

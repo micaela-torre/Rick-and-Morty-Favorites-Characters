@@ -1,0 +1,36 @@
+import { memo } from 'react';
+import { CardCharacter } from '../CardCharacter';
+import Paginator from '../Paginator/Paginator';
+import styles from './DataList.module.css';
+import Spinner from '../Spinner/Spinner';
+import Message from '../Message/Message';
+import { useDataList } from './hooks/useDataList';
+
+const DataList = ({ customMessage = 'No hay resultados', title = '', initialPage = 1, secondList, showPagination, ...resProps }) => {
+  const { isDataLoading, list, setPage, page, handleCardCountChange } = useDataList({ ...resProps, title, initialPage });
+
+  if (isDataLoading) return <Spinner />;
+  if (!list?.length) return <Message>{customMessage}</Message>;
+
+  return (
+    <section className={styles.characters_list_container}>
+      <h3 className={secondList ? styles.second_title : styles.characters_list_title}>{title}</h3>
+      <span>Hola</span>
+      <div className={styles.characters_list}>
+        {list?.map(({ id, ...rest }) => (
+          <CardCharacter key={id} {...rest} character={title} />
+        ))}
+      </div>
+      <Paginator
+        title={title}
+        setPage={setPage}
+        page={page}
+        showPagination={showPagination}
+        initialPage={initialPage}
+        onHandlerChangePagination={handleCardCountChange}
+      />
+    </section>
+  );
+};
+
+export default memo(DataList);

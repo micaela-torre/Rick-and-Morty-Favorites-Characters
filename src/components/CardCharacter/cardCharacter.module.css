@@ -1,13 +1,15 @@
 .character_card_container {
   display: flex;
   width: 100%;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-between;
+  align-items: end;
   border-radius: 5px;
   height: 300px;
   background-position: center;
   background-size: cover;
+  cursor: pointer;
+}
+.character_card_container:hover {
+  animation: pulse 1s infinite;
 }
 
 .status_container {
@@ -18,12 +20,14 @@
   justify-content: center;
   gap: 5px;
 }
+
 input.radio_input {
-  align-self: flex-end;
-  padding: 5px;
-  width: 30px;
-  height: 30px;
-  margin: 5px;
+  visibility: hidden;
+}
+
+input[type='radio']:checked + div {
+  outline: 2px solid yellow;
+  border: 8px solid black;
 }
 
 .information_container {
@@ -34,4 +38,16 @@ input.radio_input {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }

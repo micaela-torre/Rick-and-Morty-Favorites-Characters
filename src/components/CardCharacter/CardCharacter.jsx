@@ -14,18 +14,20 @@ const CardCharacter = ({ name = '', status = '', species = '', image = '', id, e
   };
 
   return (
-    <div style={{ backgroundImage: `url(${image})` }} className={styles.character_card_container}>
+    <label htmlFor={id}>
       <input className={styles.radio_input} type="radio" name={character} onClick={chosenCharacterHandler} />
-      <div className={styles.information_container}>
-        <p>{abbreviateName(name)}</p>
-        <div className={styles.status_container}>
-          <Badge color={STATUS_COLORS[status]} />
-          <p>
-            {status} - {species}
-          </p>
+      <div style={{ backgroundImage: `url(${image})` }} className={styles.character_card_container}>
+        <div className={styles.information_container}>
+          <p>{abbreviateName(name)}</p>
+          <div className={styles.status_container}>
+            <Badge color={STATUS_COLORS[status]} />
+            <p>
+              {status} - {species}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </label>
   );
 };
 

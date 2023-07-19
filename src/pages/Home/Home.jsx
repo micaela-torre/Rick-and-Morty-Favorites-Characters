@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className={styles.home_container}>
       <ContainerList />
-      {chosenCharacters[ONE_CHARACTER].episodes.length && chosenCharacters[TWO_CHARACTER].episodes.length && (
+      {chosenCharacters[ONE_CHARACTER]?.episodes?.length && chosenCharacters[TWO_CHARACTER]?.episodes?.length && (
         <ContainerEpisodes chosenCharacters={chosenCharacters} setChosenCharacters={setChosenCharacters} />
       )}
     </div>
