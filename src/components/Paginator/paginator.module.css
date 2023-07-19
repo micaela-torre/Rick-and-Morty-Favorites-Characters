@@ -1,4 +1,5 @@
 .paginator_container,
+input,
 .buttons {
   display: flex;
   justify-content: space-between;
@@ -8,7 +9,12 @@
   background: white;
   border-radius: 5px;
 }
-.buttons {
+.buttons,
+input {
   margin-top: 0;
   gap: 10px;
+  cursor: pointer;
+}
+input:disabled {
+  cursor: default;
 }

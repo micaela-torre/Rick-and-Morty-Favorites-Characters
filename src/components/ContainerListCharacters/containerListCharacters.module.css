@@ -1,6 +1,8 @@
 .list_container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  outline: 1px solid white;
+  width: 100%;
 }
 
 @media (max-width: 600px) {

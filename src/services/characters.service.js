@@ -1,12 +1,13 @@
-import { callApi } from "./utilServices";
+import { callApi } from './utilServices';
 
-export const CharacterServices = ((callService) => {
-  const getCharacters = (page) => {
+export const CharacterServices = (callService => {
+  const getCharacters = params => {
     return callService({
-      endpoint: `character/?page=${page}`,
+      endpoint: `character/`,
+      params,
     });
   };
-  const getCharactersByUrl = (url) => {
+  const getCharactersByUrl = url => {
     return callService({
       endpoint: url,
     });
