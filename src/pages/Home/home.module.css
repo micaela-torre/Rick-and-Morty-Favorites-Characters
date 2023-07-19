@@ -1,8 +1,4 @@
 .home_container {
   min-height: 100vh;
-  /* background-image: url(https://i.postimg.cc/L6d7s16m/rick-and-morty-in-the-space-wallpaper-estatico.jpg); */
   background-color: black;
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
 }
