@@ -15,7 +15,6 @@ const DataList = ({ customMessage = 'No hay resultados', title = '', initialPage
   return (
     <section className={styles.characters_list_container}>
       <h3 className={secondList ? styles.second_title : styles.characters_list_title}>{title}</h3>
-      <span>Hola</span>
       <div className={styles.characters_list}>
         {list?.map(item => (
           <CardCharacter key={item.id} {...item} character={title} />

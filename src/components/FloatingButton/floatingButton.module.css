@@ -1,7 +1,7 @@
 .floating_button_container {
   position: fixed;
   bottom: -1px;
-  right: 20px;
+  right: 150px;
   z-index: 1;
 }
 
@@ -30,7 +30,7 @@
 }
 
 .instructions:before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: -9px;
   right: 8px;
@@ -66,5 +66,10 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+@media (max-width: 600px) {
+  .floating_button_container {
+    display: none;
   }
 }

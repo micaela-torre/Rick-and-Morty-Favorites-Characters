@@ -11,7 +11,8 @@ const ContainerEpisodesSections = () => {
   const [sharedCharacters, setSharedCharacters] = useState({});
 
   useEffect(() => {
-    if (!characterOne?.episodes?.length && !characterTwo?.episodes?.length) return undefined;
+    if (!(characterOne?.characterId && characterTwo?.characterId)) return undefined;
+    console.log(characterOne?.characterId, characterTwo?.characterId);
     setSharedCharacters(prevState => ({
       ...prevState,
       episodes: [...characterOne?.episodes, ...characterTwo?.episodes],
@@ -20,14 +21,16 @@ const ContainerEpisodesSections = () => {
     //eslint-disable-next-line
   }, [characterOne?.episodes, characterTwo?.episodes]);
 
-  if (!characterOne?.episodes?.length && !characterTwo?.episodes?.length) return null;
-
   return (
-    <div className={styles.episodes_container}>
-      <EpisodesSection title={`${ONE_CHARACTER} - Only Episodes`} chosenCharacters={chosenCharacters[ONE_CHARACTER]} />
-      <EpisodesSection title={`${ONE_CHARACTER} & ${TWO_CHARACTER} - Shared Episodes`} chosenCharacters={sharedCharacters} isSharedEpisodes />
-      <EpisodesSection title={`${TWO_CHARACTER} - Only Episodes`} chosenCharacters={chosenCharacters[TWO_CHARACTER]} />
-    </div>
+    <>
+      {characterOne?.characterId && characterTwo?.characterId && (
+        <div className={styles.episodes_container}>
+          <EpisodesSection title={`${ONE_CHARACTER} - Only Episodes`} chosenCharacters={chosenCharacters[ONE_CHARACTER]} />
+          <EpisodesSection title={`${ONE_CHARACTER} & ${TWO_CHARACTER} - Shared Episodes`} chosenCharacters={sharedCharacters} isSharedEpisodes />
+          <EpisodesSection title={`${TWO_CHARACTER} - Only Episodes`} chosenCharacters={chosenCharacters[TWO_CHARACTER]} />
+        </div>
+      )}
+    </>
   );
 };
 

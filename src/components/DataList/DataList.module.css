@@ -6,11 +6,11 @@
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
   min-width: 500px;
+  width: 100%;
 }
 .characters_list_title,
 .second_title {
   color: white;
-  -webkit-text-stroke: 0.5px black;
   font-size: 2rem;
   margin-bottom: 15px;
 }
@@ -19,9 +19,12 @@
 }
 @media (max-width: 600px) {
   .characters_list_container {
-    width: 100%;
+    width: 80%;
+    margin: 15px auto;
   }
+
   .characters_list {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
+    min-width: auto;
   }
 }

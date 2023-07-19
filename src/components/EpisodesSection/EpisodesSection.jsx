@@ -18,7 +18,7 @@ const ContainerEpisodes = ({ episodes }) => {
   if (!episodes?.length) return <Message>No results found! 😔 </Message>;
 
   return episodes?.map(episode => (
-    <p key={`episode: ${episode?.name}`}>
+    <p className={styles.episode_information} key={`episode: ${episode?.name}`}>
       Episode - {episode?.name} - {episode?.air_date}
     </p>
   ));
