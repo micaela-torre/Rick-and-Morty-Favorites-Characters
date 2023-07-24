@@ -17,6 +17,7 @@ const ContainerEpisodesSections = () => {
       episodes: [...characterOne?.episodes, ...characterTwo?.episodes],
       characterId: [characterOne?.characterId, characterTwo?.characterId],
     }));
+
     //eslint-disable-next-line
   }, [characterOne?.episodes, characterTwo?.episodes]);
 

@@ -17,11 +17,11 @@ const DataList = ({ customMessage = 'No results', title = '', initialPage = 1, s
       <h3 className={secondList ? styles.second_title : styles.characters_list_title}>{title}</h3>
       <div className={styles.characters_list}>
         {list?.map(item => (
-          <CardCharacter key={item.id} {...item} character={title} />
+          <CardCharacter key={`${title}-${item.id}`} {...item} character={title} />
         ))}
       </div>
       <Paginator
-        title={title}
+        key={title}
         setPage={setPage}
         page={page}
         showPagination={showPagination}
