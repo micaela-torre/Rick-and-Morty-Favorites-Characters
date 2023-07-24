@@ -12,7 +12,6 @@ const ContainerEpisodesSections = () => {
 
   useEffect(() => {
     if (!(characterOne?.characterId && characterTwo?.characterId)) return undefined;
-    console.log(characterOne?.characterId, characterTwo?.characterId);
     setSharedCharacters(prevState => ({
       ...prevState,
       episodes: [...characterOne?.episodes, ...characterTwo?.episodes],

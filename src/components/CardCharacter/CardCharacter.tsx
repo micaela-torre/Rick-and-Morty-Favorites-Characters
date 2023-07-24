@@ -1,16 +1,17 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { STATUS_COLORS } from '../../constants/colors';
 import Badge from '../Badge/Badge';
 import styles from './cardCharacter.module.css';
 import { EpisodeContext } from '../../context/EpisodeContext';
 import { abbreviateName } from '../../helpers/functions';
+import { CardCharacterProps, ChosenCharacters } from './interface_card_character';
 
-const CardCharacter = ({ name = '', status = '', species = '', image = '', id, episode, character }) => {
+const CardCharacter = ({ name = '', status = '', species = '', image = '', id, episode, character }: CardCharacterProps) => {
   const { setChosenCharacters } = useContext(EpisodeContext);
 
-  const chosenCharacterHandler = e => {
-    const { name } = e.target;
-    setChosenCharacters(prevState => ({ ...prevState, [name]: { episodes: episode, characterId: id } }));
+  const chosenCharacterHandler = (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => {
+    const { name } = e.currentTarget;
+    setChosenCharacters((prevState: ChosenCharacters) => ({ ...prevState, [name]: { episodes: episode, characterId: id } }));
   };
 
   return (
