@@ -3,8 +3,8 @@ import styles from './paginator.module.css';
 import Button from '../PrimaryButton/PrimaryButton';
 import { usePaginator } from './hooks/usePaginator';
 
-const Paginator = ({ page, title, initialPage, showPagination = true, onHandlerChangePagination, setPage }) => {
-  const { handleChangePaginator, itemPerPage, initialPagePaginator } = usePaginator({ page, title, initialPage, setPage });
+const Paginator = ({ page, initialPage, showPagination = true, onHandlerChangePagination, setPage }) => {
+  const { handleChangePaginator, itemPerPage, initialPagePaginator } = usePaginator({ page, initialPage, setPage });
 
   if (!showPagination) return null;
 
