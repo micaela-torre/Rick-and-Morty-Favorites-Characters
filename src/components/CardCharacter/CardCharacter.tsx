@@ -18,7 +18,7 @@ const CardCharacter = ({ name = '', status = '', species = '', image = '', id, e
   };
 
   return (
-    <label htmlFor={`${characterTitle}_${id}`}>
+    <label data-testid="character-container" htmlFor={`${characterTitle}_${id}`}>
       <input
         className={styles.radio_input}
         type="radio"
@@ -27,7 +27,7 @@ const CardCharacter = ({ name = '', status = '', species = '', image = '', id, e
         onClick={chosenCharacterHandler}
         data-testid="character-input"
       />
-      <div style={{ backgroundImage: `url(${image})` }} className={styles.character_card_container}>
+      <div data-testid="character-image" style={{ backgroundImage: `url(${image})` }} className={styles.character_card_container}>
         <div className={styles.information_container}>
           <p>{abbreviateName(name)}</p>
           <div className={styles.status_container}>
